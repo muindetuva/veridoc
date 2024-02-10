@@ -9,9 +9,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@othent/kms": "^1.0.8",
+    "ardrive-core-js": "^2.0.2",
+    "arlocal": "^1.1.65",
+    "arweave": "^1.14.4",
     "pinia": "^2.1.7",
     "vue": "^3.4.15",
-    "vue-router": "^4.2.5"
+    "vue-router": "^4.2.5",
+    "warp-contracts": "^1.4.34",
+    "weavedb-sdk": "^0.39.1"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.3",
