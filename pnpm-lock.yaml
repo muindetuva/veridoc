@@ -8,6 +8,9 @@ dependencies:
   '@othent/kms':
     specifier: ^1.0.8
     version: 1.0.8
+  ardb:
+    specifier: ^1.1.10
+    version: 1.1.10
   ardrive-core-js:
     specifier: ^2.0.2
     version: 2.0.2(@solana/web3.js@1.90.0)
@@ -17,6 +20,9 @@ dependencies:
   arweave:
     specifier: ^1.14.4
     version: 1.14.4
+  dotenv:
+    specifier: ^16.4.2
+    version: 16.4.2
   pinia:
     specifier: ^2.1.7
     version: 2.1.7(typescript@5.3.3)(vue@3.4.15)
@@ -1655,7 +1661,7 @@ packages:
   /@types/ws@7.4.7:
     resolution: {integrity: sha512-JQbbmxZTZehdc2iszGKs5oC3NFnjeay7mtAWrdt7qNtAVK0g19muApzAy4bm9byz79xa2ZnO/BOBC2R8RC5Lww==}
     dependencies:
-      '@types/node': 12.20.55
+      '@types/node': 20.11.17
     dev: false
 
   /@ungap/promise-all-settled@1.1.2:
@@ -2339,10 +2345,25 @@ packages:
       zip-stream: 4.1.1
     dev: false
 
+  /arconnect@0.2.9:
+    resolution: {integrity: sha512-Us49eN/+8l6BrkAPdXnJVPwWlxxUPR7QaBjA0j3OBAcioIFRpwTdoPN9FxtwDGN91lgM6ebOudTXJToRiNizoA==}
+    dependencies:
+      arweave: 1.14.4
+    dev: false
+
   /arconnect@0.4.2:
     resolution: {integrity: sha512-Jkpd4QL3TVqnd3U683gzXmZUVqBUy17DdJDuL/3D9rkysLgX6ymJ2e+sR+xyZF5Rh42CBqDXWNMmCjBXeP7Gbw==}
     dependencies:
       arweave: 1.14.4
+    dev: false
+
+  /ardb@1.1.10:
+    resolution: {integrity: sha512-LtDa0T6FXiNG9D9kcyboEFfmvVJ9Y+W8404UTQS3BkvgqHHKsgFUuftft3RepAZVvR2bc+z5z+/koqgUe7LIUA==}
+    dependencies:
+      arweave: 1.14.4
+      blockweave: 1.0.18
+    transitivePeerDependencies:
+      - debug
     dev: false
 
   /ardrive-core-js@2.0.2(@solana/web3.js@1.90.0):
@@ -2440,6 +2461,15 @@ packages:
     resolution: {integrity: sha512-AhHCJ5+vfAv1NtK4saV/D9yzCm/aJS+s5EQMXGPFW7u3Q4TLLYwFCUAp7J11aBph0xYKWN04dLoubBrtvQBX3g==}
     dependencies:
       arweave: 1.14.4
+    dev: false
+
+  /arweave-multihost@0.1.0:
+    resolution: {integrity: sha512-biIkzQ3oc4RLV1MORQnqWz51IazP++K/8SsYMjUokK0cUfBLqom4pufKFCjTkGQIZMWWanXxnZqL66hHPgTCgA==}
+    dependencies:
+      arweave: 1.14.4
+      axios: 0.21.4
+    transitivePeerDependencies:
+      - debug
     dev: false
 
   /arweave-stream-tx@1.2.2(arweave@1.14.4):
@@ -2655,6 +2685,18 @@ packages:
     resolution: {integrity: sha512-oD8Ydw+5lNoqq+en24iuPt1QixdPpe/nUF8azTHnviCZYu9zUC+TwdzIp5orpblJosNlgNbVmmAb//c6d6ImUQ==}
     dev: false
 
+  /blockweave@1.0.18:
+    resolution: {integrity: sha512-EEv7phLUTXkHIHdBFjMgqYTzKtRX0jASC974G64oe9CgYHkiSXUCjtbngzcpRroivErD+Y7+WCc2Vggtqklq/w==}
+    dependencies:
+      arconnect: 0.2.9
+      axios: 0.21.4
+      bignumber.js: 9.1.2
+      redstone-smartweave: 0.3.10-alpha.19
+      util: 0.12.5
+    transitivePeerDependencies:
+      - debug
+    dev: false
+
   /bn.js@4.11.8:
     resolution: {integrity: sha512-ItfYfPLkWHUjckQCk8xC+LwxgK8NYcXywGigJgSwOP8Y2iyWT4f2vsZnoOXTTbo+o5yXmIUJ4gn5538SO5S3gA==}
     dev: false
@@ -2735,6 +2777,13 @@ packages:
       bs58: 4.0.1
       create-hash: 1.2.0
       safe-buffer: 5.2.1
+    dev: false
+
+  /bson@4.7.2:
+    resolution: {integrity: sha512-Ry9wCtIZ5kGqkJoi6aD8KjxFZEx78guTQDnpXWiNthsxzrxAK/i8E6pCHAIZTbaEFWcOCvbecMukfK7XUvyLpQ==}
+    engines: {node: '>=6.9.0'}
+    dependencies:
+      buffer: 5.7.1
     dev: false
 
   /buffer-alloc-unsafe@1.1.0:
@@ -3400,6 +3449,11 @@ packages:
     resolution: {integrity: sha512-qiSlmBq9+BCdCA/L46dw8Uy93mloxsPSbwnm5yrKn2vMPiy8KyAskTF6zuV/j5BMsmOGZDPs7KjU+mjb670kfA==}
     dev: false
 
+  /dotenv@16.4.2:
+    resolution: {integrity: sha512-rZSSFxke7d9nYQ5NeMIwp5PP+f8wXgKNljpOb7KtH6SKW1cEqcXAz9VSJYVLKe7Jhup/gUYOkaeSVyK8GJ+nBg==}
+    engines: {node: '>=12'}
+    dev: false
+
   /drbg.js@1.0.1:
     resolution: {integrity: sha512-F4wZ06PvqxYLFEZKkFxTDcns9oFNk34hvmJSEwdzsxVQ8YI5YaxtACgQatkYgv2VI2CFkUd2Y+xosPQnHv809g==}
     engines: {node: '>=0.10'}
@@ -3460,6 +3514,7 @@ packages:
 
   /emoji-regex@8.0.0:
     resolution: {integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==}
+    requiresBuild: true
     dev: false
 
   /encodeurl@1.0.2:
@@ -4011,7 +4066,7 @@ packages:
       fs.realpath: 1.0.0
       inflight: 1.0.6
       inherits: 2.0.4
-      minimatch: 3.0.4
+      minimatch: 3.1.2
       once: 1.4.0
       path-is-absolute: 1.0.1
     dev: false
@@ -4357,6 +4412,7 @@ packages:
   /is-fullwidth-code-point@3.0.0:
     resolution: {integrity: sha512-zymm5+u+sCsSWyD9qNaejV3DFvhCKclKdizYaJUuHA83RLjb7nSuGnddCHGv0hk+KY7BMAlsWeK4Ueg6EV6XQg==}
     engines: {node: '>=8'}
+    requiresBuild: true
     dev: false
 
   /is-generator-function@1.0.10:
@@ -5762,6 +5818,23 @@ packages:
       undici: 5.28.3
     dev: false
 
+  /redstone-smartweave@0.3.10-alpha.19:
+    resolution: {integrity: sha512-QL4OtSh0R+ip7D+obkoZm0Uvp1UKhk+DbbxlFVcdEV3QI3fwD/0wkClbFq6XZueJdOWkcPp6xA2VgUcmAVQ7qQ==}
+    engines: {node: '>=12'}
+    deprecated: 'Package has been renamed to warp-contracts. Following is no longer supported. To get the latest version please install warp-contracts: https://www.npmjs.com/package/warp-contracts.'
+    dependencies:
+      '@weavery/clarity': 0.1.5
+      arweave: 1.14.4
+      arweave-multihost: 0.1.0
+      axios: 0.21.4
+      bignumber.js: 9.1.2
+      bson: 4.7.2
+      json-beautify: 1.1.1
+      tslog: 3.3.4
+    transitivePeerDependencies:
+      - debug
+    dev: false
+
   /redstone-wasm-json-toolkit@1.0.3:
     resolution: {integrity: sha512-5TumLje/czphGt9B2hXqLnQEmvJ3olvdp5gvLr0ayDMZ6FXhDF7Sfo//xIgug4Uyif5o4tJyYvOeo5Of17/01w==}
     deprecated: redstone-wasm-json-toolkit has been renamed to warp-wasm-json-toolkit. Please install new package.
@@ -6130,6 +6203,18 @@ packages:
     resolution: {integrity: sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==}
     engines: {node: '>=0.10.0'}
 
+  /source-map-support@0.5.21:
+    resolution: {integrity: sha512-uBHU3L3czsIyYXKX88fdrGovxdSCoTGDRZ6SYXtSRxLZUzHg5P/66Ht6uoUlHu9EZod+inXhKo3qQgwXUT/y1w==}
+    dependencies:
+      buffer-from: 1.1.2
+      source-map: 0.6.1
+    dev: false
+
+  /source-map@0.6.1:
+    resolution: {integrity: sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==}
+    engines: {node: '>=0.10.0'}
+    dev: false
+
   /split-on-first@1.1.0:
     resolution: {integrity: sha512-43ZssAJaMusuKWL8sKUBQXHWOpq8d6CfN/u1p4gUzfJkM05C8rxTmYrkIPTXapZpORA6LkkzcUulJ8FqA7Uudw==}
     engines: {node: '>=6'}
@@ -6439,6 +6524,13 @@ packages:
 
   /tslib@2.6.2:
     resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
+    dev: false
+
+  /tslog@3.3.4:
+    resolution: {integrity: sha512-N0HHuHE0e/o75ALfkioFObknHR5dVchUad4F0XyFf3gXJYB++DewEzwGI/uIOM216E5a43ovnRNEeQIq9qgm4Q==}
+    engines: {node: '>=10'}
+    dependencies:
+      source-map-support: 0.5.21
     dev: false
 
   /tsscmp@1.0.6:

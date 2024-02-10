@@ -10,9 +10,11 @@
   },
   "dependencies": {
     "@othent/kms": "^1.0.8",
+    "ardb": "^1.1.10",
     "ardrive-core-js": "^2.0.2",
     "arlocal": "^1.1.65",
     "arweave": "^1.14.4",
+    "dotenv": "^16.4.2",
     "pinia": "^2.1.7",
     "vue": "^3.4.15",
     "vue-router": "^4.2.5",
